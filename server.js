@@ -1,6 +1,7 @@
 const express    = require('express');
 const router     = express.Router();
 const bodyParser = require('body-parser');
+const PORT       = process.env.PORT || 3000
 var   movies     = require('./data/movies');
 
 const app = express();
@@ -64,6 +65,6 @@ router.delete('/movie/:id', ( req, res ) => {
 
 app.use('/', router);
 
-app.listen(3000, () => {
+app.listen(PORT, () => {
   console.log('Running on PORT 3000');
 });
